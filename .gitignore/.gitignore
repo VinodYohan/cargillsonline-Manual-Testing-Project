@@ -1,0 +1,12 @@
+# Ignore files with real credentials
+api-testing/environments/ENV_production_real.json
+
+# Postman temp files
+*.postman_dump.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/

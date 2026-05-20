@@ -1,0 +1,19 @@
+{
+  "info": {
+    "_postman_id": "8707c68a-177a-4cf7-9550-5727956061f7",
+    "name": "05-Checkout API collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53727706",
+    "_collection_link": "https://go.postman.co/collection/53727706-8707c68a-177a-4cf7-9550-5727956061f7?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "TC-API-CHK-001 | GET Delivery Slots Homepage",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
