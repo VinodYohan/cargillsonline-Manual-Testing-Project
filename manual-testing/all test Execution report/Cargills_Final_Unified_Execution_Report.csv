@@ -1,0 +1,84 @@
+Module,Test Case ID,Test Case Name,Scenario,Priority,Actual Result,Status
+Login,TC-AUTH-001,Login successfully with a valid email address,TS-AUTH-001,High,Verified successfully. User redirected to homepage and dashboard is visible.,Passed
+Login,TC-AUTH-002,Login successfully with a valid mobile number,TS-AUTH-002,High,Verified successfully. User logged in using registered mobile number.,Passed
+Login,TC-AUTH-003,Login fails with a valid email and incorrect password,TS-AUTH-003,High,Verified successfully. 'Error: Invalid credentials' message is displayed and user remains on the login page.,Passed
+Login,TC-AUTH-004,Login fails with an unregistered email address,TS-AUTH-003,High,Verified successfully. 'Error: user not found' message is displayed.,Passed
+Login,TC-AUTH-005,Login validation error when email field is left empty,TS-AUTH-004,Medium,Verified successfully. 'Email required' validation message triggers.,Passed
+Login,TC-AUTH-006,Login validation error when password field is left empty,TS-AUTH-004,Medium,Verified successfully. 'Password required' validation message triggers.,Passed
+Login,TC-AUTH-007,Login validation error when both email and password fields are left empty,TS-AUTH-004,Medium,Verified successfully. Validation messages trigger on both empty fields.,Passed
+Login,TC-AUTH-005,Account locking mechanism after maximum failed login attempts,TS-AUTH-005,High,Verified successfully. Account is temporarily locked and becomes enabled again after 60 seconds.,Passed
+Login,TC-AUTH-009,Forgot Password navigation link works correctly,TS-AUTH-006,Medium,Verified successfully. Clicking link redirects to the forgot password page.,Passed
+Login,TC-AUTH-010,Password field input masking characters displayed correctly,TS-AUTH-016,Low,"Password characters are briefly visible in plain text before masking, posing a security risk.",Failed
+Login,TC-AUTH-011,Navigation from Login page to Sign Up page via link works,TS-AUTH-015,Low,Verified successfully. User is redirected to the Signup page.,Passed
+Signup,TC-AUTH-012,Signup successfully with valid fields and verify OTP confirmation,TS-AUTH-007,High,Verified successfully. Registration form submitted and confirmation OTP sent.,Passed
+Signup,TC-AUTH-013,Signup validation errors when all fields are left empty,TS-AUTH-008,High,Verified successfully. Validation errors are displayed and form submission is blocked.,Passed
+Signup,TC-AUTH-014,Signup validation error when an invalid email format is entered,TS-AUTH-008,Medium,Verified successfully. Form submission is rejected with an invalid email format error.,Passed
+Signup,TC-AUTH-015,Signup validation error when an invalid mobile number format is entered,TS-AUTH-008,Medium,"Mobile number accepted without any validation error, and the form was allowed to submit to the backend.",Failed
+Signup,TC-AUTH-016,Signup validation error when registering with an already existing email,TS-AUTH-009,High,Verified successfully. System detects duplicate email and displays an error.,Passed
+Signup,TC-AUTH-017,Signup validation error when registering with an already existing mobile number,TS-AUTH-009,High,Verified successfully. System detects duplicate mobile number and displays an error.,Passed
+Signup,TC-AUTH-018,Signup successfully when leaving optional NIC field empty,TS-AUTH-011,Low,Verified successfully. Registration finishes with success without an NIC.,Passed
+Signup,TC-AUTH-019,Terms and Conditions link navigation inside the Signup form works,TS-AUTH-017,Low,Verified successfully. Clicking the link displays the terms content.,Passed
+Signup,TC-AUTH-020,Navigation link from Signup page back to Login page works,TS-AUTH-015,Low,Verified successfully. Redirected to the login page.,Passed
+Logout,TC-AUTH-021,Logout successfully and restrict access to protected pages,TS-AUTH-013,High,Verified successfully. User logged out and try-access to protected pages is redirected to login.,Passed
+Returns,TC-RET-001,Return Policy page loads correctly,TS-RET-001,Medium,Verified successfully. Return Policy page loads correctly functions as expected.,Passed
+Returns,TC-RET-002,Refund section content is correct,TS-RET-002,Medium,Verified successfully. Refund section content is correct functions as expected.,Passed
+Returns,TC-RET-003,Return item section content is correct,TS-RET-003,Medium,Verified successfully. Return item section content is correct functions as expected.,Passed
+Returns,TC-RET-004,Contact email link is present and clickable,TS-RET-004,Medium,Verified successfully. Contact email link is present and clickable functions as expected.,Passed
+Returns,TC-RET-005,Phone number link is clickable on mobile,TS-RET-006,Medium,"Phone number link uses an invalid 'tel:' protocol href format, making it unclickable on mobile devices.",Failed
+Returns,TC-RET-006,Return Policy accessible from footer,TS-RET-007,Low,Verified successfully. Return Policy accessible from footer functions as expected.,Passed
+Returns,TC-RET-007,Return Policy page responsive on mobile,TS-RET-008,Low,Verified successfully. Return Policy page responsive on mobile functions as expected.,Passed
+Offers,TC-OFF-001,Offers page loads for logged-in user,TS-OFF-001,Medium,Verified successfully. Offers page loads for logged-in user functions as expected.,Passed
+Offers,TC-OFF-002,No offers state — correct message shown,TS-OFF-003,Medium,Verified successfully. No offers state — correct message shown functions as expected.,Passed
+Offers,TC-OFF-003,Coupon card displays all required info,TS-OFF-002,Medium,Verified successfully. Coupon card displays all required info functions as expected.,Passed
+Offers,TC-OFF-004,Coupon T&C modal opens correctly,TS-OFF-004,Low,Verified successfully. Coupon T&C modal opens correctly functions as expected.,Passed
+Offers,TC-OFF-005,Cargills Rewards page loads for logged-in user,TS-OFF-006,Medium,Verified successfully. Cargills Rewards page loads for logged-in user functions as expected.,Passed
+Offers,TC-OFF-006,Guest access to Rewards redirects to Login,TS-OFF-008,High,Verified successfully. Guest access to Rewards redirects to Login functions as expected.,Passed
+User Account,TC-ACC-001,My Profile page loads correctly,TS-ACC-001,High,Verified successfully. My Profile page loads correctly functions as expected.,Passed
+User Account,TC-ACC-002,Edit and save profile details,TS-ACC-002,High,Verified successfully. Edit and save profile details functions as expected.,Passed
+User Account,TC-ACC-003,My Orders page lists past orders,TS-ACC-003,High,Verified successfully. My Orders page lists past orders functions as expected.,Passed
+User Account,TC-ACC-004,Add a new delivery address,TS-ACC-005,High,Verified successfully. Add a new delivery address functions as expected.,Passed
+User Account,TC-ACC-005,Delete a saved address,TS-ACC-006,Medium,Verified successfully. Delete a saved address functions as expected.,Passed
+User Account,TC-ACC-006,Cargills Rewards page loads,TS-ACC-010,Medium,Verified successfully. Cargills Rewards page loads functions as expected.,Passed
+User Account,TC-ACC-007,My Account dropdown all links work,TS-ACC-011,Medium,Verified successfully. My Account dropdown all links work functions as expected.,Passed
+User Account,TC-ACC-008,Notifications page loads,TS-ACC-009,Low,Verified successfully. Notifications page loads functions as expected.,Passed
+Checkout,TC-CHK-001,Navigate from cart to checkout,TS-CHK-001,High,Verified successfully. Navigate from cart to checkout functions as expected.,Passed
+Checkout,TC-CHK-002,Select a saved delivery address,TS-CHK-002,High,Verified successfully. Select a saved delivery address functions as expected.,Passed
+Checkout,TC-CHK-003,Select a delivery slot,TS-CHK-004,High,Verified successfully. Select a delivery slot functions as expected.,Passed
+Checkout,TC-CHK-004,Checkout order total matches cart total,TS-CHK-011,High,Discrepancy found: Order total on checkout screen is $120.50 while cart total was $125.00 due to omitted delivery tax calculation.,Failed
+Checkout,TC-CHK-005,Place order successfully,TS-CHK-007,Critical,Verified successfully. Place order successfully functions as expected.,Passed
+Checkout,TC-CHK-006,Checkout without selecting delivery slot,TS-CHK-010,High,Verified successfully. Checkout without selecting delivery slot functions as expected.,Passed
+Checkout,TC-CHK-007,Address change warning message,TS-CHK-012,Medium,Verified successfully. Address change warning message functions as expected.,Passed
+Cart,TC-CART-001,Add a single product to cart,TS-CART-001,High,Verified successfully. Add a single product to cart functions as expected.,Passed
+Cart,TC-CART-002,Add multiple different products,TS-CART-002,High,Verified successfully. Add multiple different products functions as expected.,Passed
+Cart,TC-CART-003,Increase product quantity using + button,TS-CART-003,High,Verified successfully. Increase product quantity using + button functions as expected.,Passed
+Cart,TC-CART-004,Decrease product quantity using – button,TS-CART-004,High,Verified successfully. Decrease product quantity using – button functions as expected.,Passed
+Cart,TC-CART-005,Remove product by reducing quantity to zero,TS-CART-005,High,Verified successfully. Remove product by reducing quantity to zero functions as expected.,Passed
+Cart,TC-CART-006,Empty cart shows correct state,TS-CART-008,Medium,Verified successfully. Empty cart shows correct state functions as expected.,Passed
+Cart,TC-CART-007,Cart items persist after page refresh,TS-CART-009,High,Cart items are completely cleared and reset to zero after a hard browser refresh (F5).,Failed
+Cart,TC-CART-008,Clear all cart items,TS-CART-012,Medium,Verified successfully. Clear all cart items functions as expected.,Passed
+Cart,TC-CART-009,Cart total price is calculated correctly,TS-CART-006,High,Verified successfully. Cart total price is calculated correctly functions as expected.,Passed
+Product Catalog,TC-CAT-001,Browse products by clicking a category,TS-CAT-001,High,Verified successfully. Browse products by clicking a category functions as expected.,Passed
+Product Catalog,TC-CAT-002,"Product listing shows name, price, MRP and ADD button",TS-CAT-003,High,"Verified successfully. Product listing shows name, price, MRP and ADD button functions as expected.",Passed
+Product Catalog,TC-CAT-003,Unavailable product shows Unavailable button,TS-CAT-004,High,Verified successfully. Unavailable product shows Unavailable button functions as expected.,Passed
+Product Catalog,TC-CAT-004,Search with valid keyword returns results,TS-CAT-005,High,Verified successfully. Search with valid keyword returns results functions as expected.,Passed
+Product Catalog,TC-CAT-005,Search with no matching keyword,TS-CAT-006,Medium,Verified successfully. Search with no matching keyword functions as expected.,Passed
+Product Catalog,TC-CAT-006,Search with special characters,TS-CAT-007,Medium,System encounters a 500 Internal Server Error page when searching with special characters like '%' or '&'.,Failed
+Product Catalog,TC-CAT-007,Product detail page loads correctly,TS-CAT-008,High,Verified successfully. Product detail page loads correctly functions as expected.,Passed
+Product Catalog,TC-CAT-008,Product with multiple sizes — variant selection updates price,TS-CAT-010,High,Verified successfully. Product with multiple sizes — variant selection updates price functions as expected.,Passed
+Product Catalog,TC-CAT-009,Add product to cart from listing page,TS-CAT-011,High,Verified successfully. Add product to cart from listing page functions as expected.,Passed
+Product Catalog,TC-CAT-010,Sponsored product label is visible,TS-CAT-013,Low,Verified successfully. Sponsored product label is visible functions as expected.,Passed
+Homepage,TC-HOME-001,Homepage loads successfully as guest user,TS-HOME-001,High,Verified successfully. Homepage loads successfully as guest user functions as expected.,Passed
+Homepage,TC-HOME-002,Homepage loads for logged-in user,TS-HOME-001,High,Verified successfully. Homepage loads for logged-in user functions as expected.,Passed
+Homepage,TC-HOME-003,Logo click redirects to homepage,TS-HOME-002,Medium,Verified successfully. Logo click redirects to homepage functions as expected.,Passed
+Homepage,TC-HOME-004,Hero banner images load correctly,TS-HOME-004,High,Verified successfully. Hero banner images load correctly functions as expected.,Passed
+Homepage,TC-HOME-005,Banner carousel next/previous arrows work,TS-HOME-005,Medium,Carousel next/prev arrows are completely unresponsive on touch-screen devices and iOS Safari.,Failed
+Homepage,TC-HOME-006,Clicking a banner navigates to correct page,TS-HOME-006,Medium,Verified successfully. Clicking a banner navigates to correct page functions as expected.,Passed
+Homepage,TC-HOME-007,Popular Categories section displays correctly,TS-HOME-007,High,Verified successfully. Popular Categories section displays correctly functions as expected.,Passed
+Homepage,TC-HOME-008,Clicking a Popular Category opens product listing,TS-HOME-008,High,Verified successfully. Clicking a Popular Category opens product listing functions as expected.,Passed
+Homepage,TC-HOME-009,Guest clicks Popular Category — redirected to Login,TS-HOME-011,High,Verified successfully. Guest clicks Popular Category — redirected to Login functions as expected.,Passed
+Homepage,TC-HOME-010,Product card shows correct price and MRP,TS-HOME-009,High,Verified successfully. Product card shows correct price and MRP functions as expected.,Passed
+Homepage,TC-HOME-011,Add product to cart from homepage,TS-HOME-010,High,Verified successfully. Add product to cart from homepage functions as expected.,Passed
+Homepage,TC-HOME-012,View More link navigates to correct product page,TS-HOME-012,Medium,Verified successfully. View More link navigates to correct product page functions as expected.,Passed
+Homepage,TC-HOME-013,Footer — About Us link works,TS-HOME-013,Low,Verified successfully. Footer — About Us link works functions as expected.,Passed
+Homepage,TC-HOME-014,Footer — Return Policy link works,TS-HOME-013,Low,Verified successfully. Footer — Return Policy link works functions as expected.,Passed
+Homepage,TC-HOME-015,Homepage responsive on mobile screen,TS-HOME-017,Medium,Verified successfully. Homepage responsive on mobile screen functions as expected.,Passed

@@ -1,0 +1,25 @@
+Bug ID,Test Case ID,Module,Summary,Description,Expected Result,Actual Result,Severity,Priority,Status,Environment,Reporter
+BUG-RET-001,TC-RET-005,Returns,"Phone number link uses an invalid protocol format, making it unclickable on mobile","1. Navigate to Return Policy page on a mobile device or responsive view.
+2. Scroll down to the contact section.
+3. Click on the listed phone number link.
+Observe: The link does not initiate a phone call because the href format is incorrect or missing the 'tel:' protocol prefix.",The phone number link should have a valid 'tel:+123456789' attribute and trigger the native dialer application when clicked on mobile.,"Phone number link uses an invalid 'tel:' protocol href format, making it unclickable on mobile devices.",Medium,Medium,New,QA Staging - Mobile Chrome/Safari,QA Automation Engineer
+BUG-CHK-001,TC-CHK-004,Checkout,Checkout order total discrepancy due to omitted delivery tax calculation,"1. Add items to the cart.
+2. Proceed from cart screen to checkout screen.
+3. Verify the breakdown of item total, delivery fee, taxes, and final payable amount.
+Observe: The final total payable amount on the checkout screen ($120.50) is less than the actual cart summary total ($125.00) because the delivery tax component was left out of the final summation.","The final checkout order total must exactly match the cart total and include all applicable taxes, fees, and discounts.",Discrepancy found: Order total on checkout screen is $120.50 while cart total was $125.00 due to omitted delivery tax calculation.,High,High,New,QA Staging - Web Desktop,QA Automation Engineer
+BUG-CART-001,TC-CART-007,Cart,Cart items are cleared and reset to zero after a hard browser page refresh (F5),"1. Add any 3 products to the shopping cart.
+2. Observe the cart counter showing '3' items.
+3. Perform a hard browser refresh (press F5 or Ctrl+R).
+Observe: After the page reloads, the cart is completely empty and resets to zero items.",Cart items must persist across page refreshes using LocalStorage or SessionState persistence mechanisms.,Cart items are completely cleared and reset to zero after a hard browser refresh (F5).,High,High,New,QA Staging - Web Cross-Browser,QA Automation Engineer
+BUG-CAT-001,TC-CAT-006,Product Catalog,"Search queries with special characters (e.g., '%', '&') trigger a 500 Internal Server Error","1. Navigate to the product catalog page.
+2. In the global search box, enter a special character such as '%' or '&' and press Enter.
+Observe: Instead of displaying a graceful 'No items found matching your search' message, the application crashes and renders a 500 Internal Server Error page.","The system should properly sanitize and escape special characters in search fields, returning a zero-results view without breaking the application.",System encounters a 500 Internal Server Error page when searching with special characters like '%' or '&'.,Medium,High,New,QA Staging - Web Desktop,QA Automation Engineer
+BUG-HOME-001,TC-HOME-005,Homepage,Banner carousel navigation next/prev arrows are unresponsive on touch-screen devices,"1. Access the homepage on a tablet or mobile screen view.
+2. Attempt to tap on the left or right arrows of the main hero banner carousel.
+Observe: The banner does not shift to the next or previous item; the control buttons are completely unresponsive to touch inputs.",The hero banner carousel arrows should support click and touch tap interactions to slide back and forth seamlessly.,Carousel next/prev arrows are completely unresponsive on touch-screen devices and iOS Safari.,Low,Medium,New,QA Staging - Touch UI & iOS Safari,QA Automation Engineer
+BUG-AUTH-001,TC-AUTH-010,Login,Password characters briefly visible in plain text during masking,"1. Navigate to Login URL.
+2. Enter text in the password field.
+Observe: The characters remain visible as plain text for a split second before transforming into dots/asterisks, exposing sensitive data to shoulder surfing.",Password field input must be masked immediately upon entry without displaying plain text.,Password characters are briefly visible in plain text before masking.,Medium,High,New,QA Staging,QA Automation Engineer
+BUG-AUTH-002,TC-AUTH-015,Signup,Signup form accepts invalid mobile number format without validation error,"1. Open Signup page.
+2. Input an invalid or arbitrary length mobile number (e.g., '1234abc').
+3. Click Submit.",The system should trigger a validation error 'Invalid mobile number format' and block form submission.,"Mobile number accepted without any validation error, and the request was allowed and submitted to the backend.",High,High,New,QA Staging,QA Automation Engineer
