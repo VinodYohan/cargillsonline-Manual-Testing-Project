@@ -1,0 +1,7 @@
+Bug ID,Test Case ID,Module,Summary,Description,Expected Result,Actual Result,Severity,Priority,Status,Environment,Reporter
+BUG-AUTH-001,TC-AUTH-010,Login,Password characters briefly visible in plain text during masking,"1. Navigate to Login URL.
+2. Enter text in the password field.
+Observe: The characters remain visible as plain text for a split second before transforming into dots/asterisks, exposing sensitive data to shoulder surfing.",Password field input must be masked immediately upon entry without displaying plain text.,Password characters are briefly visible in plain text before masking.,Medium,High,New,QA Staging,QA Automation Engineer
+BUG-AUTH-002,TC-AUTH-015,Signup,Signup form accepts invalid mobile number format without validation error,"1. Open Signup page.
+2. Input an invalid or arbitrary length mobile number (e.g., '1234abc').
+3. Click Submit.",The system should trigger a validation error 'Invalid mobile number format' and block form submission.,"Mobile number accepted without any validation error, and the request was allowed and submitted to the backend.",High,High,New,QA Staging,QA Automation Engineer

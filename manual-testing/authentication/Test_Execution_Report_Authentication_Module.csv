@@ -1,0 +1,57 @@
+Test Case ID,Scenario ID,Module,Priority,Precondition,Step No,Action,Expected Result,Actual Result,Status
+TC-AUTH-001,TS-AUTH-001,Login,High,User has registered account; Login page open,1,Navigate to Login URL,Login page loads,Login page loaded successfully,Passed
+TC-AUTH-001,TS-AUTH-001,Login,High,User has registered account; Login page open,2,Enter valid email,Email accepted,Email field accepted the input,Passed
+TC-AUTH-001,TS-AUTH-001,Login,High,User has registered account; Login page open,3,Enter valid password,Password masked,Password field characters are properly masked,Passed
+TC-AUTH-001,TS-AUTH-001,Login,High,User has registered account; Login page open,4,Click Login,Redirect to homepage,Redirected to the user homepage/dashboard,Passed
+TC-AUTH-001,TS-AUTH-001,Login,High,User has registered account; Login page open,5,Verify dashboard,User account visible,User account profile and dashboard visible,Passed
+TC-AUTH-002,TS-AUTH-002,Login,High,User registered with mobile,1,Navigate to Login URL,Login page loads,Login page loaded successfully,Passed
+TC-AUTH-002,TS-AUTH-002,Login,High,User registered with mobile,2,Enter valid mobile number,Mobile accepted,Mobile number field accepted the input,Passed
+TC-AUTH-002,TS-AUTH-002,Login,High,User registered with mobile,3,Enter valid password,Password masked,Password field characters are properly masked,Passed
+TC-AUTH-002,TS-AUTH-002,Login,High,User registered with mobile,4,Click Login,User logged in,User logged in successfully,Passed
+TC-AUTH-003,TS-AUTH-003,Login,High,User registered account exists,1,Navigate to Login,Login page loads,Login page loaded successfully,Passed
+TC-AUTH-003,TS-AUTH-003,Login,High,User registered account exists,2,Enter valid email,Accepted,Accepted verified successfully,Passed
+TC-AUTH-003,TS-AUTH-003,Login,High,User registered account exists,3,Enter wrong password,Masked input,Masked input verified successfully,Passed
+TC-AUTH-003,TS-AUTH-003,Login,High,User registered account exists,4,Click Login,Error: Invalid credentials,Displayed expected error: 'Error: Invalid credentials',Passed
+TC-AUTH-003,TS-AUTH-003,Login,High,User registered account exists,5,Verify stay on page,No redirect,"No redirect occurred, user remains on login page",Passed
+TC-AUTH-004,TS-AUTH-003,Login,High,No account exists for email,1,Navigate to Login,Login page loads,Login page loaded successfully,Passed
+TC-AUTH-004,TS-AUTH-003,Login,High,No account exists for email,2,Enter unregistered email,Accepted,Accepted verified successfully,Passed
+TC-AUTH-004,TS-AUTH-003,Login,High,No account exists for email,3,Enter password,Masked,Masked verified successfully,Passed
+TC-AUTH-004,TS-AUTH-003,Login,High,No account exists for email,4,Click Login,Error: user not found,Displayed expected error: 'Error: user not found',Passed
+TC-AUTH-005,TS-AUTH-004,Login,Medium,Login page open,1,Leave email empty,Validation required,Validation message triggers as expected,Passed
+TC-AUTH-005,TS-AUTH-004,Login,Medium,Login page open,2,Enter password,Input accepted,Input accepted verified successfully,Passed
+TC-AUTH-005,TS-AUTH-004,Login,Medium,Login page open,3,Click Login,Email required message,Email required message verified successfully,Passed
+TC-AUTH-006,TS-AUTH-004,Login,Medium,Login page open,1,Enter email,Accepted,Accepted verified successfully,Passed
+TC-AUTH-006,TS-AUTH-004,Login,Medium,Login page open,2,Leave password empty,Validation required,Validation message triggers as expected,Passed
+TC-AUTH-006,TS-AUTH-004,Login,Medium,Login page open,3,Click Login,Password required message,Password required message verified successfully,Passed
+TC-AUTH-007,TS-AUTH-004,Login,Medium,Login page open,1,Leave both fields empty,Empty inputs,Empty inputs verified successfully,Passed
+TC-AUTH-007,TS-AUTH-004,Login,Medium,Login page open,2,Click Login,Both field validation shown,Both field validation shown verified successfully,Passed
+TC-AUTH-008,TS-AUTH-005,Login,High,User account exists,1,Attempt login with wrong password,Error shown,Displayed expected error: 'Error shown',Passed
+TC-AUTH-008,TS-AUTH-005,Login,High,User account exists,2,Repeat attempts,Error shown,Displayed expected error: 'Error shown',Passed
+TC-AUTH-008,TS-AUTH-005,Login,High,User account exists,3,Reach max attempts,Account locked temporarily,Account locked temporarily verified successfully,Passed
+TC-AUTH-008,TS-AUTH-005,Login,High,User account exists,4,Wait 60 seconds,Login enabled again,Login enabled again verified successfully,Passed
+TC-AUTH-009,TS-AUTH-006,Login,Medium,Login page open,1,Click Forgot Password,Redirect,Redirected successfully,Passed
+TC-AUTH-009,TS-AUTH-006,Login,Medium,Login page open,2,Open /Forget page,Page loads,Page loaded successfully,Passed
+TC-AUTH-010,TS-AUTH-016,Login,Low,Login page open,1,Enter password,Masked characters displayed,Password characters are briefly visible in plain text before masking,Failed
+TC-AUTH-011,TS-AUTH-015,Login,Low,Login page open,1,Click Sign Up link,Redirect to Signup page,Redirect to Signup page verified successfully,Passed
+TC-AUTH-012,TS-AUTH-007,Signup,High,User not registered,1,Open Signup page,Page loads,Page loaded successfully,Passed
+TC-AUTH-012,TS-AUTH-007,Signup,High,User not registered,2,Enter mobile/email/name/password,Accepted,Accepted verified successfully,Passed
+TC-AUTH-012,TS-AUTH-007,Signup,High,User not registered,3,Click submit,Success message sent,Success message sent verified successfully,Passed
+TC-AUTH-012,TS-AUTH-007,Signup,High,User not registered,4,Verify confirmation,OTP sent,OTP sent verified successfully,Passed
+TC-AUTH-013,TS-AUTH-008,Signup,High,Signup page open,1,Leave all fields empty,Validation errors shown,Validation errors shown verified successfully,Passed
+TC-AUTH-013,TS-AUTH-008,Signup,High,Signup page open,2,Click submit,Form blocked,Form submission blocked by client-side validation,Passed
+TC-AUTH-014,TS-AUTH-008,Signup,Medium,Signup page open,1,Enter invalid email,Validation error,Validation error verified successfully,Passed
+TC-AUTH-014,TS-AUTH-008,Signup,Medium,Signup page open,2,Click submit,Reject request,Reject request verified successfully,Passed
+TC-AUTH-015,TS-AUTH-008,Signup,Medium,Signup page open,1,Enter invalid mobile,Validation error,Mobile number accepted without any validation error,Failed
+TC-AUTH-015,TS-AUTH-008,Signup,Medium,Signup page open,2,Click submit,Reject request,Request allowed and form submitted,Failed
+TC-AUTH-016,TS-AUTH-009,Signup,High,Email already exists,1,Enter existing email,Detected duplicate,Detected duplicate verified successfully,Passed
+TC-AUTH-016,TS-AUTH-009,Signup,High,Email already exists,2,Click submit,Error shown,Displayed expected error: 'Error shown',Passed
+TC-AUTH-017,TS-AUTH-009,Signup,High,Mobile already exists,1,Enter existing mobile,Detected duplicate,Detected duplicate verified successfully,Passed
+TC-AUTH-017,TS-AUTH-009,Signup,High,Mobile already exists,2,Click submit,Error shown,Displayed expected error: 'Error shown',Passed
+TC-AUTH-018,TS-AUTH-011,Signup,Low,Signup page open,1,Leave NIC empty,Optional field,Optional field verified successfully,Passed
+TC-AUTH-018,TS-AUTH-011,Signup,Low,Signup page open,2,Submit form,Registration success,Registration success verified successfully,Passed
+TC-AUTH-019,TS-AUTH-017,Signup,Low,Signup page open,1,Click Terms link,Redirect,Redirected successfully,Passed
+TC-AUTH-019,TS-AUTH-017,Signup,Low,Signup page open,2,Verify page,Content displayed,Content displayed verified successfully,Passed
+TC-AUTH-020,TS-AUTH-015,Signup,Low,Signup page open,1,Click Login Now,Redirect to login page,Redirect to login page verified successfully,Passed
+TC-AUTH-021,TS-AUTH-013,Logout,High,User logged in,1,Click My Account,Dropdown opens,Dropdown opens verified successfully,Passed
+TC-AUTH-021,TS-AUTH-013,Logout,High,User logged in,2,Click Logout,User logged out,User logged out verified successfully,Passed
+TC-AUTH-021,TS-AUTH-013,Logout,High,User logged in,3,Try protected page,Redirect to login,Redirect to login verified successfully,Passed
