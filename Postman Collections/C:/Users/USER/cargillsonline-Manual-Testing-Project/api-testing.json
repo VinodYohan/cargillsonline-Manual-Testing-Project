@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "2d3f7f25-0eb3-4ac2-917c-cd54e5f591a6",
+		"name": "02 - Products API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TC-API-PROD-001 | GET Popular Categories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a2da102a-21f8-422e-8053-7028912ee6bf",
+						"exec": [
+							"// Test 1 - Status code",
+							"pm.test(\"Status is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Test 2 - Response is JSON not HTML",
+							"pm.test(\"Response is JSON not HTML\", function () {",
+							"    var text = pm.response.text();",
+							"    pm.expect(text).to.not.include(\"<!DOCTYPE\");",
+							"});",
+							"",
+							"// Test 3 - Response is an array",
+							"pm.test(\"Response is an array\", function () {",
+							"    var json = pm.response.json();",
+							"    pm.expect(json).to.be.an(\"array\");",
+							"});",
+							"",
+							"// Test 4 - Array is not empty",
+							"pm.test(\"Categories list is not empty\", function () {",
+							"    var json = pm.response.json();",
+							"    pm.expect(json.length).to.be.above(0);",
+							"});",
+							"",
+							"// Test 5 - Each category has required fields",
+							"pm.test(\"Each category has Id and MenuCategoryName\", function () {",
+							"    var json = pm.response.json();",
+							"    json.forEach(function(category) {",
+							"        pm.expect(category).to.have.property(\"Id\");",
+							"        pm.expect(category).to.have.property(\"MenuCategoryName\");",
+							"        pm.expect(category).to.have.property(\"Image\");",
+							"        pm.expect(category).to.have.property(\"Abbreviation\");",
+							"    });",
+							"});",
+							"",
+							"// Test 6 - All categories have IsPopular = True",
+							"pm.test(\"All returned categories are marked IsPopular True\", function () {",
+							"    var json = pm.response.json();",
+							"    json.forEach(function(category) {",
+							"        pm.expect(category.IsPopular).to.equal(\"True\");",
+							"    });",
+							"});",
+							"",
+							"// Test 7 - Category names are not empty strings",
+							"pm.test(\"Category names are not empty\", function () {",
+							"    var json = pm.response.json();",
+							"    json.forEach(function(category) {",
+							"        pm.expect(category.MenuCategoryName).to.not.equal(\"\");",
+							"    });",
+							"});",
+							"",
+							"// Test 8 - Response time",
+							"pm.test(\"Response time is less than 3000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});",
+							"",
+							"// Save first category EnId for use in next requests",
+							"var json = pm.response.json();",
+							"if (json.length > 0) {",
+							"    pm.collectionVariables.set"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "88adc1c0-9273-4e8a-b711-64a771873c48",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "_gcl_au=1.1.1110461905.1779168673; _gid=GA1.2.1745154458.1779168673; _fbp=fb.1.1779168672878.545737988537033726; _hjSessionUser_3483650=eyJpZCI6IjExMzExMzU3LTQxY2ItNWMzNC1iYWNhLWUyZjVmZmU4NjhhNiIsImNyZWF0ZWQiOjE3NzkxNjg2NzMxMDcsImV4aXN0aW5nIjp0cnVlfQ==; ASP.NET_Pincode=Colombo; ASP.NET_WebStoreType=1; Asp.Net_WebStoreId=1031; _hjSession_3483650=eyJpZCI6IjhhMDhjYTE3LTc4ZmUtNDk4Zi04YTUxLTMyOWFkZTYyNGM1MiIsImMiOjE3NzkyNzkyNjc5ODMsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjowLCJzcCI6MH0=; ASP.NET_SessionId=cfooedrhnkx5bplv22smwxrp; AuthToken=dcf3767e-fbd5-4776-bef2-7d64d77a0ee6; _dc_gtm_UA-180493424-1=1; _ga=GA1.2.32240786.1779168673; _ga_QX8S5H6CS0=GS2.2.s1779283533$o4$g1$t1779283576$j17$l0$h0; _ga_5XW4RYY9CK=GS2.1.s1779283531$o5$g1$t1779283576$j15$l0$h0",
+						"type": "text"
+					}
+				],
+				"url": "https://cargillsonline.com/Web/GetPopularCatgoryV1"
+			},
+			"response": []
+		},
+		{
+			"name": "TC-API-PROD-002 | GET All Categories",
+			"id": "1307fcd0-c901-47e5-ba58-e35333d7cefa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
